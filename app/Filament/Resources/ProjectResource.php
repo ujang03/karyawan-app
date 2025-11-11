@@ -34,7 +34,7 @@ class ProjectResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('price')
                     ->numeric()
-                    ->prefix('$')
+                    ->prefix('Rp')
                     ->maxValue(42949672.95),
                 Forms\Components\DatePicker::make('start_date')
                     ->required(),

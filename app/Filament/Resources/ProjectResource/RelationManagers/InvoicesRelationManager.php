@@ -30,7 +30,7 @@ class InvoicesRelationManager extends RelationManager
                 Forms\Components\TextInput::make('total')
                     ->required()
                     ->numeric()
-                    ->prefix('$')
+                    ->prefix('Rp')
                     ->maxValue(42949672.95),
                 Forms\Components\DatePicker::make('issue_date')
                     ->required(),

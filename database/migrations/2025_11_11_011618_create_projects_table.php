@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('karyawan', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('email')->unique();
-            $table->string('telp')->nullable();
-            $table->string('jabatan');
-            $table->date('tgl_masuk');
-            $table->decimal('gaji', 15, 2)->default(0);
-            $table->timestamps();
+            $table->foreignId('client_id')->constrained()->onDelete('cascade');
+            $table->text('description')->nullable();
+            $table->decimal('price', 15, 2)->default(0);
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
+            // $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('karyawans');
+        Schema::dropIfExists('projects');
     }
 };
